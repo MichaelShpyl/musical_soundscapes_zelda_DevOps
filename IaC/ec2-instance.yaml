@@ -1,0 +1,15 @@
+Resources:
+  MyInstance:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      InstanceType: "t2.micro"
+      ImageId: "ami-02141377eee7defb9" 
+      BlockDeviceMappings:
+        - DeviceName: "/dev/xvda"
+          Ebs:
+            VolumeSize: 20
+            Encrypted: true
+            KmsKeyId: "arn:aws:kms:eu-west-1:529088290870:key/3dfabe1c-54ce-4022-8e7a-6004e9572e3e"
+      Tags:
+        - Key: Name
+          Value: SoundscapeEC2
